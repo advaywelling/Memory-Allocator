@@ -14,7 +14,7 @@ alloc_header *get_free_block(size_t req_size) {
     alloc_header *curr = head;
     while(curr) {
         if(curr->mem.is_free && curr->mem.size >= req_size) {
-            return curr;
+            return curr + 1;
         }
         curr = curr->mem.next;
     }
